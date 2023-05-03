@@ -1,0 +1,32 @@
+|agencia circuito paquete visa1|
+agencia := Agencia new.
+circuito := CircuitoNacional new.
+paquete := PaqueteMedida new.
+visa1 := Visa new.
+
+"PRUEBAS SOBRE LA CLASE VISA:"
+visa1 asString.
+visa1 tipo:1; pais:'EEUU'; costo: 7500.00.
+visa1 asString.
+
+"PRUEBAS SOBRE LA CLASE CIRCUITO NACIONAL:"
+circuito asString.
+circuito codigo:'ABC123'; costoGestion:8999.99;fechaDesde:(Date year:2023 month:5 day:10);fechaHasta:(Date year:2023 month:5 day:25);nombre:'circuito de prueba';costoPaquete:15000.00;enFechaEspecial:true.
+circuito asString.
+
+"PRUEBAS SOBRE LA CLASE PAQUETE A MEDIDA:"
+paquete asString.
+paquete codigo:'DEF456'; costoGestion:29999.99;fechaDesde:(Date year:2024 month:5 day:17);fechaHasta:(Date year:2024 month:6 day:2);nombre:'paquete de prueba'; costoExcusiones:2999.99; costoServicios:5999.99;costoTransporte:3499.99;dias:15;itinerario:'15 dias de paseo'; visa:visa1.
+paquete asString.
+
+"PRUEBAS SOBRE LA CLASE AGENCIA:"
+agencia asString.
+agencia nombre:'Agencia de prueba'.
+agencia registrarPaquete: paquete.
+agencia registrarPaquete: circuito.
+agencia asString.
+agencia paqueteMedidaPais: 'EEUU'.
+agencia paqueteMedidaPais: 'Argentina'.
+agencia generarInformePaquetes: 15000000.00.
+agencia buscarCircuitosFechasEspeciales.
+agencia showAgencia.
